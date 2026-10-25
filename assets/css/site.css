@@ -502,3 +502,38 @@ figure { position: relative; }
 .stud-steps .step-n { flex: none; margin: 0; background: rgba(201, 162, 79, .2); color: var(--gold-2); }
 .stud-steps h4 { margin: 4px 0 2px; font-size: 16.5px; }
 .stud-steps p { margin: 0; font-size: 15px; opacity: .85; }
+
+/* Justified paragraphs (Borja's preference), with hyphenation so narrow
+   phone columns don't open wide gaps. Short labels keep normal alignment. */
+main p, blockquote p {
+  text-align: justify;
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+main p.kicker, main p.sub, main p.codes, main p.dog-meta, main p.litter-date,
+main p.litter-parents, main p.press-original, main p.press-source, main p.press-actions,
+main p.fine, main p.crumbs, main p.dog-links, main p.trust, main p.center,
+main p.litter-next-title, main p.form-error, main p.legacy-highlight, .chooser-logo p,
+.stats p, .stat-l {
+  text-align: start;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+}
+:lang(ja) main p, :lang(zh) main p { text-justify: inter-character; }
+
+/* Phones: the timeline text takes the full width (year and place on one
+   line above it), so justified text has room and no gaps open up. */
+@media (max-width: 600px) {
+  .timeline::before { inset-inline-start: 5px; }
+  .timeline li { display: block; padding-inline-start: 26px; }
+  .timeline li::before { inset-inline-start: 0; inset-block-start: 7px; }
+  .tl-when { grid-row: auto; text-align: start; font-size: 20px; display: inline; }
+  .tl-when::after { content: " · "; color: var(--muted); }
+  .timeline li > .tl-when, .timeline li > .tl-where { display: inline; }
+  .timeline .tl-top { padding: 16px 16px 6px 26px; }
+  [dir="rtl"] .timeline .tl-top { padding: 16px 26px 6px 16px; }
+  .timeline .tl-top::before { inset-inline-start: -2px; inset-block-start: 20px; }
+}
+main p { text-wrap: pretty; }
