@@ -540,3 +540,14 @@ main p { text-wrap: pretty; }
 
 .press-note { font-size: 15px; color: var(--ink-2); margin-block-end: 6px; }
 main p.press-note { text-align: start; }
+
+/* Follow us band */
+.follow { background: #1b3d6d; color: #fff; padding-block: 38px; }
+.follow-inner { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.follow-ico { width: 56px; height: 56px; border-radius: 50%; background: rgba(255, 255, 255, .12); display: grid; place-items: center; flex: none; }
+.follow-ico svg { width: 30px; height: 30px; }
+.follow h2 { font-size: clamp(26px, 3.4vw, 36px); margin: 0 0 4px; color: #fff; }
+.follow p { margin: 0; opacity: .9; text-align: start; }
+.follow-inner > div { flex: 1 1 260px; }
+.follow .btn .ico svg { transform: none; }
+.follow .btn-gold { background: #fff; color: #1b3d6d; } .follow .btn-gold:hover { background: #e9eef7; }
