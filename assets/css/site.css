@@ -537,3 +537,6 @@ main p.litter-next-title, main p.form-error, main p.legacy-highlight, .chooser-l
   .timeline .tl-top::before { inset-inline-start: -2px; inset-block-start: 20px; }
 }
 main p { text-wrap: pretty; }
+
+.press-note { font-size: 15px; color: var(--ink-2); margin-block-end: 6px; }
+main p.press-note { text-align: start; }
